@@ -24,11 +24,11 @@ app.get('/:shortId', async (req, res) => {
         $push: {
         visitHistory: {
             timestamp: Date.now(),
-            }
+            },
         },
     }
     );
-    res.redirect(FileSystemEntry.redirectURL);
+    res.redirect(entry.redirectURL);
 })
 
 app.listen(port, () => console.log(`Server is running on http://localhost:${port}`));
